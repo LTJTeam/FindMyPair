@@ -9,7 +9,7 @@ class _SearchWidgetState extends State<SearchWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 20, top: 20, right: 20),
+      margin: EdgeInsets.only(left: 20, top: 70, right: 20),
       decoration: BoxDecoration(
           color: Color(0xff304149),
           borderRadius: BorderRadius.all(Radius.circular(20))),

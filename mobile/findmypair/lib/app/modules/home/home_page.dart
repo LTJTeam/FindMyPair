@@ -24,12 +24,21 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
-          child: Column(
+          child: Stack(
             children: <Widget>[
-              HeaderWidget(),
-              SearchWidget(),
-              ListFamousProjectWidget(),
-              ListRecentProjectsWidget()
+              Column(
+                children: <Widget>[
+                  HeaderWidget(),
+                  SearchWidget(),
+                  ListFamousProjectWidget(),
+                  ListRecentProjectsWidget()
+                ],
+              ),
+              Positioned(
+                top: 40,
+                left: 140,
+                child: Image.asset("assets/icon_home.png"),
+              )
             ],
           ),
         ),

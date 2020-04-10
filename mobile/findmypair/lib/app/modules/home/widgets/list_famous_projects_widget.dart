@@ -18,11 +18,11 @@ class _ListFamousProjectWidgetState extends State<ListFamousProjectWidget> {
         children: <Widget>[
           Row(
             children: <Widget>[
-              Icon(Icons.star, color: AppColors.letterLists, size: 30),
-              Text("Famous Project",
+              Icon(Icons.star, color: Colors.white, size: 20),
+              Text(" Famous Project",
                   style: TextStyle(
-                      color: AppColors.letterLists,
-                      fontSize: 30,
+                      color: Colors.white,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold))
             ],
           ),

@@ -28,12 +28,18 @@ class _HeaderWidgetState extends State<HeaderWidget> {
             children: <Widget>[
               Text(
                 "Find",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                    color: Color(0xff30996F)),
               ),
-              Text("MyPair", style: TextStyle(fontSize: 30))
+              Text("MyPair",
+                  style: TextStyle(
+                    fontSize: 30,
+                  ))
             ],
           ),
-        )
+        ),
       ],
     );
   }

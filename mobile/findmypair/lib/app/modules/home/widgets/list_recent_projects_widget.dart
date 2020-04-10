@@ -18,11 +18,11 @@ class _ListRecentProjectsWidgetState extends State<ListRecentProjectsWidget> {
         children: <Widget>[
           Row(
             children: <Widget>[
-              Icon(Icons.watch_later, color: AppColors.letterLists, size: 30),
-              Text("Recent Projects",
+              Icon(Icons.watch_later, color: Colors.white, size: 20),
+              Text(" Recent Projects",
                   style: TextStyle(
-                      color: AppColors.letterLists,
-                      fontSize: 30,
+                      color: Colors.white,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold))
             ],
           ),
