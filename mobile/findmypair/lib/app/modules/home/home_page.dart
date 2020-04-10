@@ -1,3 +1,4 @@
+import 'package:findmypair/app/modules/home/widgets/bar_navigation_widget.dart';
 import 'package:findmypair/app/modules/home/widgets/header_widget.dart';
 import 'package:findmypair/app/modules/home/widgets/list_famous_projects_widget.dart';
 import 'package:findmypair/app/modules/home/widgets/list_projects_widget.dart';
@@ -18,6 +19,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
+      bottomNavigationBar: BarNavigationWidget(),
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
