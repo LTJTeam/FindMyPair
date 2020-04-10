@@ -1,0 +1,33 @@
+{
+  "name": "findmypair",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LTJTeam/FindMyPair.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LTJTeam/FindMyPair/issues"
+  },
+  "homepage": "https://github.com/LTJTeam/FindMyPair#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^15.0.0",
+    "mongoose": "^5.9.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
