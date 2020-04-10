@@ -10,50 +10,9 @@ const {
   GraphQLInt,
 } = require("graphql");
 
-const User = require("./user");
-const Project = require("./project");
-
-const PairType = new GraphQLObjectType({
-  name: "Pair",
-  fields: {
-    id: { type: GraphQLString },
-    isAproved: { type: GraphQLBoolean },
-  },
-});
-const ImgPathType = new GraphQLObjectType({
-  name: "imgPath",
-  fields: {
-    fileName: { type: GraphQLString },
-    filePath: { type: GraphQLString },
-  },
-});
-
-const UserType = new GraphQLObjectType({
-  name: "User",
-  fields: {
-    _id: { type: GraphQLID },
-    name: { type: GraphQLString },
-    email: { type: GraphQLString },
-    password: { type: GraphQLString },
-    whatsapp: { type: GraphQLString },
-    skills: { type: GraphQLList(GraphQLString) },
-  },
-});
-
-const ProjectType = new GraphQLObjectType({
-  name: "Project",
-  fields: {
-    _id: { type: GraphQLID },
-    title: { type: GraphQLString },
-    quickDescription: { type: GraphQLString },
-    fullDescription: { type: GraphQLString },
-    link: { type: GraphQLInt },
-    creator: { type: GraphQLString },
-    pair: { type: GraphQLList(PairType) },
-    imgPath: { type: GraphQLList(ImgPathType) },
-    needPairs: { type: GraphQLInt },
-  },
-});
+const { ProjectType, UserType, PairType, ImgPathType } = require("./types");
+const User = require("../models/user");
+const Project = require("../models/project");
 
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
@@ -177,36 +136,3 @@ module.exports = new GraphQLSchema({
   query: RootQuery,
   mutation: Mutation,
 });
-
-// const schema = new GraphQLSchema({
-//   query: new GraphQLObjectType({
-//     name: "Query",
-//     fields: {
-//       user: {
-//         type: GraphQLList(UserType),
-//         resolve: (root, args, context, info) => {
-//           return UserModel.find().exec();
-//         },
-//       },
-//     },
-//   }),
-//   mutation: new GraphQLObjectType({
-//     name: "CreateUser",
-//     fields: {
-//       user: {
-//         type: UserType,
-//         args: {
-//           name: { type: GraphQLNonNull(GraphQLString) },
-//           email: { type: GraphQLNonNull(GraphQLString) },
-//           password: { type: GraphQLNonNull(GraphQLString) },
-//           whatsapp: { type: GraphQLNonNull(GraphQLInt) },
-//           skills: { type: [] },
-//         },
-//         resolve: (root, args, context, info) => {
-//           var user = new UserModel(args);
-//           return user.save();
-//         },
-//       },
-//     },
-//   }),
-// });

@@ -9,11 +9,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.use(express.json());
 
+require("./controller/authController")(app);
+
 app.use(
-  "/graphql",
+  "/graphqlPost",
   graphqlHTTP({
-    schema: require("./models/schema.js"),
+    schema: require("./graphQL/schema.js"),
     graphiql: true,
   })
 );
+
 module.exports = app;
