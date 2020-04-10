@@ -1,60 +1,93 @@
 <template>
-  <v-app>
+  <v-app  style="background: #fff">
     <v-app-bar
       app
-      color="primary"
+      color="#203139"
       dark
     >
-      <div class="d-flex align-center">
+      <v-col cols="2">
         <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
+          :src="require('./assets/logo.png')"
+          class="float-right"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
+          height="80"
         />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      </v-col>
+      <v-col cols="4">
+         <v-autocomplete
+            v-model="select"
+            :loading="loading"
+            :items="items"
+            :search-input.sync="search"
+            cache-items
+            class="mx-4"
+            flat
+            hide-no-data
+            hide-details
+            label="Search a project"
+            solo-inverted
+            
+            append-icon="fa-search"
+          ></v-autocomplete>
+      </v-col>
+      <v-col cols="2">
+        Projects
+      </v-col>
+      <v-col cols="2">
+       Sign Up 
+      </v-col>
+      <v-col cols="2">
+        <v-btn depressed small color="#00995d">Login</v-btn>
+      </v-col>
     </v-app-bar>
 
     <v-content>
-      <HelloWorld/>
+      <Home/>
     </v-content>
+
+    <Footer/>
+
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+
+import Home from './components/Home';
+import Footer from './components/pages/Footer';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    Home,
+    Footer
   },
 
   data: () => ({
-    //
+    loading: false,
+        items: [],
+        search: null,
+        select: null,
+        states: [
+         'Joao'
+        ],
   }),
+  watch: {
+      search (val) {
+        val && val !== this.select && this.querySelections(val)
+      },
+  },
+  methods: {
+      querySelections (v) {
+        this.loading = true
+        // Simulated ajax query
+        setTimeout(() => {
+          this.items = this.states.filter(e => {
+            return (e || '').toLowerCase().indexOf((v || '').toLowerCase()) > -1
+          })
+          this.loading = false
+        }, 500)
+      },
+  },
 };
 </script>

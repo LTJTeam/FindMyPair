@@ -1,4 +1,4 @@
-# findmy
+# Find My Pair
 
 ## Project setup
 ```
