@@ -1,3 +1,8 @@
+import 'package:findmypair/app/modules/home/widgets/header_widget.dart';
+import 'package:findmypair/app/modules/home/widgets/list_famous_projects_widget.dart';
+import 'package:findmypair/app/modules/home/widgets/list_projects_widget.dart';
+import 'package:findmypair/app/modules/home/widgets/list_recent_projects_widget.dart';
+import 'package:findmypair/app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,11 +17,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Column(
-        children: <Widget>[],
+      backgroundColor: AppColors.background,
+      body: SingleChildScrollView(
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          child: Column(
+            children: <Widget>[
+              //HeaderWidget()
+              ListFamousProjectWidget(),
+              ListRecentProjectsWidget()
+            ],
+          ),
+        ),
       ),
     );
   }
