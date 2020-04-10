@@ -1,13 +1,9 @@
 const {
   GraphQLObjectType,
   GraphQLString,
-  GraphQLBoolean,
   GraphQLSchema,
-  GraphQLID,
-  GraphQLFloat,
   GraphQLList,
   GraphQLNonNull,
-  GraphQLInt,
 } = require("graphql");
 
 const { ProjectType, UserType, PairType, ImgPathType } = require("./types");

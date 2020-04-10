@@ -3,10 +3,10 @@ const auth = require("../middleware/auth");
 
 module.exports = (app) =>
   app.use(
-    "/graphqlAuth",
-    auth,
+    "/Auth",
+    // auth,
     graphqlHTTP({
-      schema: require("../graphQL/schema.js"),
+      schema: require("../graphQL/AuthSchema.js"),
       graphiql: true,
     })
   );

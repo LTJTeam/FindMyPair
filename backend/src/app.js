@@ -32,4 +32,5 @@ app.use("/login", async (req, res) => {
     res.status(400).send({ error: "Authentication failed" + error });
   }
 });
+
 module.exports = app;

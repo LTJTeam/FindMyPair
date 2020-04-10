@@ -1,7 +1,7 @@
 const mongoose = require("../database/connection");
 
 const LogSchema = new mongoose.Schema({
-  userId: {
+  user: {
     type: String,
     required: true,
   },
