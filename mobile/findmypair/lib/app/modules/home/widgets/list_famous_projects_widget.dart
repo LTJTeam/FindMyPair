@@ -12,7 +12,7 @@ class _ListFamousProjectWidgetState extends State<ListFamousProjectWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 20, top: 250),
+      margin: EdgeInsets.only(left: 20, top: 40),
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: <Widget>[

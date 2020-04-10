@@ -3,6 +3,7 @@ import 'package:findmypair/app/modules/home/widgets/header_widget.dart';
 import 'package:findmypair/app/modules/home/widgets/list_famous_projects_widget.dart';
 import 'package:findmypair/app/modules/home/widgets/list_projects_widget.dart';
 import 'package:findmypair/app/modules/home/widgets/list_recent_projects_widget.dart';
+import 'package:findmypair/app/modules/home/widgets/search_widget.dart';
 import 'package:findmypair/app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,8 @@ class _HomePageState extends State<HomePage> {
           width: MediaQuery.of(context).size.width,
           child: Column(
             children: <Widget>[
-              //HeaderWidget()
+              HeaderWidget(),
+              SearchWidget(),
               ListFamousProjectWidget(),
               ListRecentProjectsWidget()
             ],
