@@ -22,8 +22,8 @@ const ProjectSchema = new mongoose.Schema({
     type: String, ///fk user Id
     required: true,
   },
-  pair: [{ type: Array }],
-  imgPath: [{ type: Array }],
+  pair: { type: Array },
+  imgPath: { type: Array },
   needPairs: Number,
 });
 

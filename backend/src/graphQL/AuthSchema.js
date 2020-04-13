@@ -119,6 +119,27 @@ const Mutation = new GraphQLObjectType({
         }
       },
     },
+    mathProject: {
+      type: ProjectType,
+      args: {
+        _id: { type: new GraphQLNonNull(GraphQLString) },
+        email: { type: new GraphQLNonNull(GraphQLString) },
+      },
+      resolve(parent, args) {
+        User.findOne({ email: args.email }, (err, doc) => {
+          Project.findOneAndUpdate(
+            { _id: args._id },
+            { pair: { id: doc._id, isAproved: false } },
+            (err, doc) => {
+              console.log(doc);
+            }
+          );
+          return Project.findOne({ _id: args._id }, (err, doc) => {
+            return doc;
+          });
+        });
+      },
+    },
   },
 });
 
