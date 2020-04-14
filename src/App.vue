@@ -31,12 +31,13 @@
           ></v-autocomplete>
       </v-col>
       <v-col cols="2">
-        Projects
+        Create Project
       </v-col>
       <v-col cols="2">
        Sign Up 
       </v-col>
       <v-col cols="2">
+        <v-btn depressed small color="#00995d">Login</v-btn>
         <v-btn depressed small color="#00995d">Login</v-btn>
       </v-col>
     </v-app-bar>

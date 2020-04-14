@@ -51,7 +51,7 @@
       <v-container>
          <v-row class="text-center">
               <v-col cols="4">
-              <h2 style="color: #fff;">Others Projects</h2>
+              <h2 style="color: #fff;">Others Projects </h2>
               <hr style="width: 25%; margin: auto; border: 4.5px solid rgb(0, 153, 93);border-radius: 5px; ">
               </v-col>
               <v-col cols="8">
